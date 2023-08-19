@@ -1,21 +1,25 @@
-import { useState } from 'react';
-import { useDispatch } from "react-redux";
-import { addContact } from '../Redux/action';
-function ContactForm() {
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import { editContact } from '../Redux/action';
 
+
+function EditContact() {
+
+
+    const { id } = useParams()
+    console.log(id)
 
     const dispatch = useDispatch()
 
-    const [form, setForm] = useState({
-        first_name: "",
-        last_name: "",
-        mob: "",
-        status: "active"
-    })
-    const [added, setAdded] = useState(false);
-    const handleChange = (e: any) => {
+    const AllContact = useSelector((store) => store.contacts)
 
+    
 
+    const [form, setForm] = useState({})
+
+    const handleChange = (e) => {
+     
         setForm({
             ...form,
             [e.target.name]: e.target.value
@@ -31,14 +35,19 @@ function ContactForm() {
 
 
 
-        dispatch(addContact(form))
-        setAdded(true);
+        dispatch(editContact({ id, ...form }))
 
     }
 
+    useEffect(() => {
+
+        AllContact.filter((el) => el.id == id && setForm(el))
+
+    }, [])
+
     return (
         <div className="w-1/2 mx-auto my-4 pt-16">
-            <h2 className="text-2xl font-bold mb-4">Create Contact</h2>
+            <h2 className="text-2xl font-bold mb-4">Edit Contact</h2>
             <div className="mb-4">
                 <label className="block font-bold mb-2" htmlFor="first-name">
                     First Name
@@ -74,8 +83,6 @@ function ContactForm() {
                     id="last-name"
                     type="number"
                     name="mob"
-                    min='10'
-                    max='10'
                     value={form.mob}
                     onChange={handleChange}
                 />
@@ -106,4 +113,4 @@ function ContactForm() {
 }
 
 
-export default ContactForm
+export default EditContact
