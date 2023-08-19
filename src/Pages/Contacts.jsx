@@ -13,7 +13,7 @@ const Contacts = () => {
     const AllContacts = useSelector((store) => store.contacts)
     const dispatch = useDispatch()
     // console.log(AllContacts)
-
+    //popup function
     const togglePopup = (contact) => {
 
         setSingleContact(contact)

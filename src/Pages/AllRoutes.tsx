@@ -8,6 +8,7 @@ const AllRoutes=()=>{
 
 
     return(
+        //definr routes to all pages
         <Routes >
             <Route path="/" element={<Contacts/>}/>
             <Route path="/contact_form" element={<ContactForm/>}/>

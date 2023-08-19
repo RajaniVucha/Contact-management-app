@@ -5,7 +5,7 @@ function ContactForm() {
 
 
     const dispatch = useDispatch()
-
+    //define form elements as array using useState hook
     const [form, setForm] = useState({
         first_name: "",
         last_name: "",
@@ -13,6 +13,8 @@ function ContactForm() {
         status: "active"
     })
     const [added, setAdded] = useState(false);
+
+    //setting the target values on change event
     const handleChange = (e: any) => {
 
 
@@ -26,7 +28,7 @@ function ContactForm() {
 
 
 
-
+//to save contact details on clicking save contact button
     function handleSave() {
 
 
