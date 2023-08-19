@@ -2,7 +2,7 @@ import {Link} from "react-router-dom";
 export default function Sidebar(){
     return (
         <div className='flex border-r-2'>
-            <div className='flex pt-16 flex-col h-screen p-3 bg-white shadow w-60'>
+            <div className='flex pt-16 flex-col h-screen p-3 bg-gray shadow w-60'>
                 <div className='space-y-3'>
                     <div className='flex item-center'>
                         <h2 className='text-x1 mt-4 font-bold'>Dashboard</h2>
@@ -19,7 +19,7 @@ export default function Sidebar(){
                            </li>
                            <li className="rounded-sm">
                                 <Link
-                                    to="/"
+                                    to="/dashboard"
                                     className="flex items-center p-2 space-x-3 rounded-md">
                                     <span>Charts And Maps</span>
                                 </Link>
