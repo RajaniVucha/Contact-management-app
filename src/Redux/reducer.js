@@ -37,7 +37,7 @@ export default function reducer(state = initialState, action) {
 
 
       let flag=0
-       if(action.payload.first_name===""||action.payload.last_name===""||action.payload.mob==""){
+       if(action.payload.first_name===""||action.payload.last_name===""||action.payload.mob===""){
           alert('ohh You Missed Required Input , Please fill')
         flag=1
       }
