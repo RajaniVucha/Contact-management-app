@@ -41,9 +41,9 @@ function EditContact() {
 
     useEffect(() => {
 
-        AllContact.filter((el) => el.id == id && setForm(el))
+        AllContact.filter((el) => el.id === id && setForm(el))
 
-    }, [])
+    })
 
     return (
         <div className="w-1/2 mx-auto my-4 pt-16">

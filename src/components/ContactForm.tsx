@@ -12,7 +12,6 @@ function ContactForm() {
         mob: "",
         status: "active"
     })
-    const [added, setAdded] = useState(false);
 
     //setting the target values on change event
     const handleChange = (e: any) => {
@@ -34,7 +33,6 @@ function ContactForm() {
 
 
         dispatch(addContact(form))
-        setAdded(true);
 
     }
 

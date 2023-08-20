@@ -1,6 +1,6 @@
 
 const Popup = ({ close, el }) => {
-
+//show details of contact
 
 
   return (
@@ -22,7 +22,7 @@ const Popup = ({ close, el }) => {
                       <p>First Name : {el.first_name}</p>
                       <p>Last Name  : {el.last_name}</p>
                       <p>Mobile   : {el.mob}</p>
-                      <p>Status     : {el.status == "active" ? "Active" : "Inactive"}</p>
+                      <p>Status     : {el.status === "active" ? "Active" : "Inactive"}</p>
                   </div>
 
 
